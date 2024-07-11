@@ -1,0 +1,230 @@
+body {
+    background-color: #A7C957;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.pizzas {
+    /*box-model*/
+    border: 5px solid;
+    padding: 1em;
+    margin: 1em;
+    border-radius:0.5em ;
+    width:  
+    display: 
+}
+.perfect_pizza {
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+ color:#555
+}
+.Shopping_cart{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+
+    background-color: #353432;
+    color: #eee;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.medium_pizza {
+    background-color: #0EAD69;
+    flex: 1;
+    text-align: center;
+    padding: auto;
+    
+
+}
+.large_pizza {
+    background-color: #6a994e;
+    flex: 1;
+    text-align: center;
+    padding: auto;
+    border-radius: 50;
+    
+    
+}
+.small_pizza {
+    background-color:#386641;
+    flex:1;
+    text-align: center;
+    padding: auto;
+    
+}
+.Contact_details {
+    background-color:#e0e1dd ;
+    
+}
+table {
+    width: 97%;
+    border-collapse: collapse;
+    background-color: #A3B18A;
+    border: 5px solid;
+    padding: 1em;
+    margin: 1em;
+    border-radius:0.5em ;
+
+}
+td {
+    padding: 10px;
+    border: 0.5px solid #A3B18A;
+    width: 20%;
+}
+#pizzaPic{
+
+    border-radius: 100px;
+}
+@media(min-width:960px) {
+    body { 
+      ;
+    }
+    .pizzas {
+        display: flex
+    }
+}
+.h111 {
+   text-align: center;
+
+}
+.img {
+    border-radius: 50;
+}
+.pizzas button {
+    background-color:#353432;
+    color:#eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer
+}
+.cartTab {
+    width:400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    inset: 0 -400px 0 auto  ;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.icon-cart{
+    position: relative;
+}
+.icon-cart span{
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 50%;
+    right: -20px;
+}
+.listProduct .item img{
+    width: 90%;
+    filter: drop-shadow(0 50px 20px #0009);
+}
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.listProduct .item{
+    background-color: #EEEEE6;
+    padding: 20px;
+    border-radius: 20px;
+}
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+.listProduct .item .price{
+    letter-spacing: 7px;
+    font-size: small;
+}
+.listProduct .item button{
+    background-color: #353432;
+    color: #eee;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+body.showCart .cartTab{
+    inset: 0 0 0 auto ;
+}
+
+body.showCart .container{
+    transform:translateX(-250px);
+}
+.cartTab h1 {
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartTab .btn {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.cartTab .btn button{
+    background-color: #353432;
+    border:none;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartTab .btn .close{
+    background-color: #eee;
+}
+.cartTab .listCart .item img{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap:10px;
+    text-align:center;
+    align-items: center;
+    
+
+}
+.listCart .quantity span {
+    display:inline-block;
+    width:25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.listCart .quantity span: :nth-child(2) {
+    background-color : transparent;
+    color: #eee;
+}
+.listCart .item: :nth-child(even) {
+    background-color: #eee1;
+
+}
+.listCart{
+    overflow:auto;
+}
+.listCart::-webkit-scrollbar{
+    width:0
+}
+.contact_us {text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color:#555}
+.Contact{text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color:#555}

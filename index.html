@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Pizza</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <div class="pizzas1" x-data="{ small: 0, medium: 0, large: 0, paid: '', checkout: false, get total() { return (this.small * 78.99 + this.medium * 89.99 + this.large * 129.99).toFixed(2); } }">
+        <div class="perfect_pizza">
+            <h1>Perfect Pizza</h1>
+            <h2>Pizza orders</h2>
+        </div>
+
+        <div class="Shopping_cart">
+            <div class="Shopping_cart">
+                <h1>Shopping cart</h1>
+
+                <div class="pizzaz">
+                    <div class="Shopping_cart" x-show="small != 0 || medium != 0 || large != 0">
+                        <template x-if="small > 0">
+                            <div class="small-cart">
+                                Small:
+                                <template x-if="!checkout">
+                                    <button class="Shopping_cart" @click="small++">+</button>
+                                </template>
+                                <span x-text="small"></span>
+                                <template x-if="!checkout">
+                                    <button class="Shopping_cart" @click="small--">-</button>
+                                </template>
+                                <span>Price: R<span x-text="(small * 58.99).toFixed(2)"></span></span>
+                            </div>
+                        </template>
+
+                        <template x-if="medium > 0">
+                            <div class="medium-cart">
+                                Medium:
+                                <template x-if="!checkout">
+                                    <button class="Shopping_cart" @click="medium++">+</button>
+                                </template>
+                                <span x-text="medium"></span>
+                                <template x-if="!checkout">
+                                    <button class="Shopping_cart" @click="medium--">-</button>
+                                </template>
+                                <span>Price: R<span x-text="(medium * 99.99).toFixed(2)"></span></span>
+                            </div>
+                        </template>
+
+                        <template x-if="large > 0">
+                            <div class="large-cart">
+                                Large:
+                                <template x-if="!checkout">
+                                    <button class="Shopping_cart" @click="large++">+</button>
+                                </template>
+                                <span x-text="large"></span>
+                                <template x-if="!checkout">
+                                    <button class="Shopping_cart" @click="large--">-</button>
+                                </template>
+                                <span>Price: R<span x-text="(large * 159.99).toFixed(2)"></span></span>
+                            </div>
+                        </template>
+
+                        <span><b>Grand total: R</b><span class="Shopping_cart" x-text="total"></span></span>
+
+                        <template x-if="!checkout">
+                            <button class="Shopping_cart" @click="checkout=!checkout">Checkout</button>
+                        </template>
+
+                        <template x-if="checkout">
+                            <label>Amount received: R<input type="number" min="0" step="0.01" x-model="paid" /></label>
+                        </template>
+
+                        <template x-if="paid == total && checkout">
+                            <span>
+                                <div style="color: rgb(15, 15, 15)">Enjoy your pizzas!</div>
+                                <button class="btn" @click="small=0; medium=0; large=0; checkout=false;">
+                                    Complete Order
+                                </button>
+                            </span>
+                        </template>
+
+                        <template x-if="parseInt(paid) < total && paid != total && checkout">
+                            <span>
+                                <div style="border: 1px solid rgb(37, 3, 204); color: #eff8fb;">
+                                    <h2><b>Not enough coins</b></h2>
+                                </div>
+                                <button class="pizzas" @click="small=0; medium=0; large=0; checkout=false;">
+                                    Exit-Cart
+                                </button>
+                            </span>
+                        </template>
+
+                        <template x-if="parseInt(paid) > total && checkout">
+                            <span>
+                                <div style="color: #eee">
+                                    <br>
+                                    <b>Much Joyfully, and here are your left over coins: R</b><span x-text="(parseInt(paid) - total).toFixed(2)"></span>
+                                </div>
+                                <button class="Shopping_cart" @click="small=0; medium=0; large=0; checkout=false; paid=''">
+                                    Complete the Order
+                                </button>
+                            </span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pizzas">
+            <div class="large_pizza">
+                <h2>Large Pizza</h2>
+                <img src="./pizza pic.jpg" width="150">
+                <h3>R159.99</h3>
+                <button class="btn" @click="large++">ORDER</button>
+                <div>
+                    Large margeritha pizza with 3 toppings, 3 meat toppings, 3 or less other toppings.
+                </div>
+            </div>
+
+            <div class="medium_pizza col-4">
+                <h2>Medium Pizza</h2>
+                <img src="./pizza pic.jpg" width="125">
+                <h3>R99.99</h3>
+                <button class="btn" @click="medium++">ORDER</button>
+                <div>
+                    Medium margeritha pizza with 3 toppings, 2 or less meat toppings, 3 or less other toppings.
+                </div>
+            </div>
+
+            <div class="small_pizza">
+                <h2>Small Pizza</h2>
+                <img src="./pizza pic.jpg" width="100" border-radius="50">
+                <h3>R58.99</h3>
+                <button class="btn" @click="small++">ORDER</button>
+                <div>
+                    Small pizza with 3 toppings, 1 meat topping, 3 or less other toppings.
+                </div>
+            </div>
+        </div>
+
+        <div class="contact_us">
+            <div class="contact">
+                <h2>Contact details</h2>
+                Contact us <div> Tel: 081 541 8822</div><div>IG: @perfect_pizza_inst
+                
+            </div>
+
+            <div class="address">
+                <h2>Location</h2>
+                <div>Etihad Way</div>
+                
+                <div>Germiston</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
