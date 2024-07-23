@@ -1,16 +1,23 @@
-body {
-    background-color: #A7C957;
+ body {
+    background-color: #424242;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .pizzas {
     /*box-model*/
-    border: 5px solid;
-    padding: 1em;
+    border: 5px ;
+    padding: em;
     margin: 1em;
     border-radius:0.5em ;
-    width:  
-    display: 
+
+}
+.pp {
+    padding: 20px;
+    text-align: center;
+}
+.btn {
+    border-radius: 0.5em;
+    font-weight: 600;
 }
 .perfect_pizza {
     text-align: center;
@@ -20,8 +27,9 @@ body {
 .Shopping_cart{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+    font-weight: 300;
 
-    background-color: #353432;
+    background-color: #4caf50 ;
     color: #eee;
     border: none;
     padding: 5px 10px;
@@ -60,7 +68,7 @@ body {
 table {
     width: 97%;
     border-collapse: collapse;
-    background-color: #A3B18A;
+    background-color: #8b7ca9;
     border: 5px solid;
     padding: 1em;
     margin: 1em;
@@ -78,7 +86,7 @@ td {
 }
 @media(min-width:960px) {
     body { 
-      ;
+      
     }
     .pizzas {
         display: flex
@@ -208,11 +216,11 @@ body.showCart .container{
     cursor: pointer;
 
 }
-.listCart .quantity span: :nth-child(2) {
+.listCart .quantity span :nth-child(2) {
     background-color : transparent;
     color: #eee;
 }
-.listCart .item: :nth-child(even) {
+.listCart .item :nth-child(even) {
     background-color: #eee1;
 
 }
@@ -224,7 +232,17 @@ body.showCart .container{
 }
 .contact_us {text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    color:#555}
+    color:#eee}
 .Contact{text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    color:#555}
+    color:#eee}
+    .small-input {
+        width: 100px;
+        padding: 5px;
+    }
+    img{
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
+    }
+    
